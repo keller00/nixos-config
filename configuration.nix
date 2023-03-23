@@ -40,7 +40,10 @@
   # Configure keymap in X11
   services.xserver.layout = "us";
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+      enable = true;
+      vteIntegration = true;
+  };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -87,6 +90,7 @@
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-dock
     gnomeExtensions.caffeine
+    gnome.gnome-terminal
   ];
 
   # List services that you want to enable:
