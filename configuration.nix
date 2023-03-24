@@ -45,6 +45,11 @@
       vteIntegration = true;
   };
 
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "mark" ];
+  };
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -60,7 +65,6 @@
         firefox
         thunderbird
         vscode
-        _1password-gui
         lazygit
         yadm
         zplug
