@@ -86,6 +86,7 @@
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
+    epiphany
   ]) ++ (with pkgs.gnome; [
     cheese # webcam tool
     gnome-music
