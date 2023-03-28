@@ -66,6 +66,7 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.caffeine
     gnome.gnome-terminal
+    gnome.gnome-tweaks
   ];
 
   # List services that you want to enable:
