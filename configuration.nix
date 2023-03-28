@@ -7,7 +7,9 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./users.nix
   ];
+
 
   nixpkgs.config.allowUnfree = true;
   virtualisation.vmware.guest.enable = true;
@@ -52,37 +54,6 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-
-  users = {
-    defaultUserShell = pkgs.zsh;
-    users.mark = {
-      isNormalUser = true;
-      extraGroups = [
-        "wheel"
-        "networkmanager"
-      ];
-      packages = with pkgs; [
-        firefox
-        thunderbird
-        vscode
-        lazygit
-        yadm
-        zplug
-        python311
-        vlc
-        spotify
-        # TODO: notion
-      ];
-      hashedPassword = "$y$j9T$SVz/zu5m6IXfXSgMiooU1.$LdFNcqf1edNncuhPBQnmet77ycTL87ce7APc0SgQDkA";
-    };
-  };
-
-  security.sudo.extraRules = [
-    {
-      users = [ "mark" ];
-      commands = [ { command = "ALL"; options = [ "NOPASSWD" "SETENV" ]; } ];
-    }
-  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
