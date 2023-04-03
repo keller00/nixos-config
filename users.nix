@@ -18,6 +18,7 @@
         "networkmanager"
       ];
       packages = with pkgs; [
+        tmux
         firefox
         thunderbird
         vscode
@@ -28,6 +29,7 @@
         vlc
         spotify
         htop
+        nodejs
         # TODO: notion
       ];
       hashedPassword = "$y$j9T$SVz/zu5m6IXfXSgMiooU1.$LdFNcqf1edNncuhPBQnmet77ycTL87ce7APc0SgQDkA";
