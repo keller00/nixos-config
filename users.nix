@@ -30,6 +30,7 @@
         spotify
         htop
         nodejs
+        tree
         # TODO: notion
       ];
       hashedPassword = "$y$j9T$SVz/zu5m6IXfXSgMiooU1.$LdFNcqf1edNncuhPBQnmet77ycTL87ce7APc0SgQDkA";
