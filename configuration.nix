@@ -73,6 +73,7 @@
     gnomeExtensions.caffeine
     gnome.gnome-terminal
     gnome.gnome-tweaks
+    yaru-theme
   ];
 
   # List services that you want to enable:
