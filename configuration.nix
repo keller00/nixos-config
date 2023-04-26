@@ -2,17 +2,20 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, modulesPath, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./vbox-configuration.nix
+    ./metal.nix
+    ./vbox.nix
+    (modulesPath + "/installer/scan/not-detected.nix")
     ./users.nix
   ];
 
 
   nixpkgs.config.allowUnfree = true;
-  virtualisation.vmware.guest.enable = true;
 
   # Use the GRUB 2 boot loader.
   # boot.loader.grub.enable = true;
@@ -24,10 +27,6 @@
   # boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.opengl.enable = true;
-  #hardware.nvidia.package = config.boot.kernelPackage.nvidiaPackages.stable;
-  hardware.nvidia.modesetting.enable = true;
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -71,9 +70,9 @@
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-dock
     gnomeExtensions.caffeine
-    gnome.gnome-terminal
     gnome.gnome-tweaks
     yaru-theme
+    tmux
   ];
 
   # List services that you want to enable:
