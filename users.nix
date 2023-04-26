@@ -18,31 +18,15 @@
         "networkmanager"
       ];
       packages = with pkgs; [
-        tmux
-        firefox
         thunderbird
         vscode
-        lazygit
-        yadm
-        zplug
-        python311
         vlc
         spotify
-        htop
-        nodejs
-        tree
         discord
         steam
         # TODO: notion
       ];
       hashedPassword = "$y$j9T$SVz/zu5m6IXfXSgMiooU1.$LdFNcqf1edNncuhPBQnmet77ycTL87ce7APc0SgQDkA";
     };
-  };
-
-  home-manager.users.mark = { pkgs, ... }: {
-    home.packages = with pkgs; [
-      cowsay
-    ];
-    home.stateVersion = "22.11";
   };
 }

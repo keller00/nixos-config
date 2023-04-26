@@ -12,6 +12,7 @@
     ./vbox.nix
     (modulesPath + "/installer/scan/not-detected.nix")
     ./users.nix
+    <home-manager/nixos>
   ];
 
 
