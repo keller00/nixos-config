@@ -30,5 +30,7 @@
     htop
     python311
     lazygit
+    jetbrains.pycharm-community
+    silver-searcher
   ];
 }
